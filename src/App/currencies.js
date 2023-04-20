@@ -19,4 +19,6 @@ const currencies = [
         short: "GBP",
         rate: 1,
     },
-]
+];
+
+export default currencies;
