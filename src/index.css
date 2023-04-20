@@ -13,3 +13,15 @@ html, ::after, ::before {
   --dbg-color: #000;
   --msec-color: orange;
 }
+
+@media(max-width: 720px) {
+  :root {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    font-size: 40%;
+  }
+}
