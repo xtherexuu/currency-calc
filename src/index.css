@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, ::after, ::before {
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 60%;
+  --mbg-color: #fff;
+  --dbg-color: #000;
+  --msec-color: orange;
+}
