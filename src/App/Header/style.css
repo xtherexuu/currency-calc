@@ -1,0 +1,36 @@
+.header {
+    background-color: var(--msec-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header__image {
+    width: 7rem;
+}
+
+.header__heading {
+    font-size: 2.5rem;
+}
+
+.nav__button {
+    border: none;
+    background-color: transparent;
+}
+
+.button__element {
+    margin: 1rem 0;
+    background-color: black;
+    width: 4.5rem;
+    height: 0.5rem;
+    transition: transform 1s;
+}
+
+/* .button__element--firstActive {
+    transform: translate(0px, 7.5px) rotate(45deg)
+}
+
+.button__element--secoundActive {
+    transform: translate(0px,-7.5px) rotate(-45deg)
+} */
