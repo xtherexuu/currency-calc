@@ -1,5 +1,5 @@
 .header {
-    background-color: var(--msec-color);
+    background-color: var(--orange-main-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,7 +11,7 @@
 }
 
 .header__heading {
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .nav__button {
