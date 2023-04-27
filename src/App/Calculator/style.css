@@ -1,0 +1,75 @@
+.calculator {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 720px) {
+    .calculator {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+.calculator__heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.calculator__form {
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 
+    "i i i"
+    "f p t"
+    "b b b";
+    grid-gap: 20px;
+}
+
+.form__input {
+    grid-area: i;
+    padding: 10px;
+    font-size: 2rem;
+    border: solid var(--orange-main-color) 2px;
+}
+
+.form__select {
+    padding: 10px;
+    font-size: 2rem;
+    border: solid var(--orange-main-color) 2px;
+    background-color: transparent;
+}
+
+.form__select--fromCurrency {
+    grid-area: f;
+}
+
+.form__select--toCurrency {
+    grid-area: t;
+}
+
+.form__button {
+    grid-area: b;
+    background-color: var(--orange-main-color);
+    border: none;
+    font-weight: 500;
+    font-size: 2rem;
+    padding: 10px;
+    transition: background-color 1s;
+}
+
+.form__button:hover {
+    background-color: rgb(255, 183, 49);
+}
+
+.form__image {
+    grid-area: p;
+    width: 5rem;
+    align-self: center;
+    justify-self: center;
+}
+
+

@@ -1,0 +1,13 @@
+.result__paragraph {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.result__paragraph--special {
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.paragraph--fromAmount, .paragraph--result {
+    color: var(--orange-main-color);
+}
