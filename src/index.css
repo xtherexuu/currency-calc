@@ -10,9 +10,9 @@ html, ::after, ::before {
 
 :root {
   font-size: 60%;
-  --mbg-color: #fff;
-  --dbg-color: #000;
-  --msec-color: orange;
+  --light-main-color: #fff;
+  --dark-bg-color: #000;
+  --orange-main-color: orange;
 }
 
 @media(max-width: 720px) {
