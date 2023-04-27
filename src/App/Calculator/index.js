@@ -33,6 +33,7 @@ const Calculator = () => {
 
         setCombinedData((data) => (data = combinedData));
         calculateResult(combinedData);
+        setAmountValue(value => value = "");
     };
 
     return (
