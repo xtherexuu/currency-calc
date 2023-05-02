@@ -1,0 +1,261 @@
+.kebabMenu {
+    width: 100%;
+    height: calc(100vh - (20px + 7rem));
+    background-color: var(--light-main-color);
+    position: absolute;
+    top: calc(20px + 7rem);
+    left: 0;
+    transform: translateY(100vh);
+    z-index: 9;
+    transition: transform 0.5s, background-color 0.5s;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.kebabMenu--darkModeOn {
+    background-color: var(--dark-main-color);
+}
+
+.e {
+    transform: translateY(0);
+}
+
+.kebabMenu__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 2px var(--orange-main-color);
+}
+
+.header__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.header__button {
+    font-size: 1.75rem;
+    padding: 5px;
+    background-color: var(--orange-main-color);
+    border: none;
+    margin-right: 10px;
+}
+
+.header__button--darkModeOn {
+    color: white;
+}
+
+.kebabMenu__heading {
+    font-size: 2.75rem;
+    margin-left: 20px;
+    transition: color 0.25s 0.25s;
+}
+
+.kebabMenu__header--darkModeOn {
+    color: white;
+}
+
+.kebabMenu__button {
+    margin-right: 10px;
+    width: 6rem;
+    height: 5rem;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.button__image {
+    width: 4.25rem;
+    transition: transform 0.5s;
+    margin-right: 0.75rem;
+}
+
+.button__image--darkModeOn {
+    transform: translateY(-4rem);
+}
+
+.currencies__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.currencies__heading {
+    font-size: 2.75rem;
+    margin-left: 20px;
+    transition: color 0.25s 0.25s;
+}
+
+.currencies__heading--darkModeOn {
+    color: white;
+}
+
+.currencies__button {
+    font-size: 2rem;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+/* .currencies__container {
+    max-width: 100vw;
+    overflow-x: auto;
+}
+
+.currencies__table {
+    font-size: 2rem;
+    border-collapse: collapse;
+    width: auto;
+}
+
+.table__data, .table__heading {
+    border: 1px solid black;
+    text-align: left;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.table__data--textCenter {
+    text-align: center;
+}
+
+.table__button {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+} */
+
+/* ======================================================================== */
+
+
+/* 
+.container__list {
+    list-style: none inside;
+    padding: 0 20px;
+    font-size: 1.75rem;
+    max-height: 100%;
+}
+
+.list__item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    border: 1px solid black;
+    padding: 5px;
+    word-break: break-word;
+    justify-items: center;
+}
+
+.list__item * {
+    margin: 0 5px;
+}
+
+.item__button {
+    background-color: transparent;
+    border: none;
+    color: red;
+} */
+
+.kebabMenu__currencies {
+    overflow: auto;
+}
+
+.currencies__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 0 20px 20px;
+}
+
+@media (max-width: 720px) {
+    .currencies__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 325px) {
+    .currencies__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.currencies__currency {
+    background-color: var(--orange-main-color);
+    word-break: break-word;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.currency__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 10px;
+    transition: color 0.25s 0.25s;
+}
+
+.currency__heading--darkModeOn {
+    color: white;
+    text-shadow: 0 0 50px white;
+}
+
+.name__heading {
+    font-size: 2.5rem;
+}
+
+.name__name {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-top: 1rem;
+}
+
+.short__heading {
+    font-size: 2.25rem;
+}
+
+.short__short {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.rate__heading {
+    font-size: 1.75rem;
+}
+
+.rate__rate {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.currency__button {
+    font-size: 1.25rem;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.kebabMenu__footer {
+    border-top: solid 2px var(--orange-main-color)
+}
+
+.footer__paragraph {
+    font-size: 1.5rem;
+    text-align: center;
+    transition: color 0.25s 0.25s;
+}
+
+.footer__paragraph--darkModeOn {
+    color: white;
+}
