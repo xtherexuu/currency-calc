@@ -3,9 +3,9 @@ import sunIcon from "../../Images/sunicon.png";
 import moonIcon from "../../Images/moonicon.png";
 import currencies from "../currencies";
 
-const KebabMenu = ({ isDarkModeOn, setDarkMode }) => {
+const KebabMenu = ({ isDarkModeOn, setDarkMode, isMenuButtonClicked, isMenuOpened }) => {
     return (
-        <div className={`kebabMenu${isDarkModeOn ? " kebabMenu--darkModeOn" : ""}`}>
+        <div className={`kebabMenu${isDarkModeOn ? " kebabMenu--darkModeOn" : ""}${isMenuButtonClicked ? " kebabMenu--showed" : ""}${isMenuOpened ? " kebabMenu--opened" : ""}`}>
             <header className="kebabMenu__header">
                 <h2 className={`kebabMenu__heading${isDarkModeOn ? " kebabMenu__header--darkModeOn" : ""}`}>Menu</h2>
                 <div className="header__buttons">
