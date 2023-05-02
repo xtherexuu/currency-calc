@@ -8,10 +8,20 @@ html, ::after, ::before {
   overflow-x: hidden;
 }
 
+body {
+  background-color: var(--light-main-color);
+  transition: background-color 0.5s;
+}
+
+/* html {
+  overflow-y: hidden;
+} */
+
 :root {
   font-size: 60%;
-  --light-main-color: #fff;
-  --dark-bg-color: #000;
+  --light-main-color: hsl(0, 0%, 95%);
+  --dark-main-color: hsl(0, 0%, 20%);
+  --dark-secound-color: hsl(0, 0%, 30%);
   --orange-main-color: orange;
 }
 

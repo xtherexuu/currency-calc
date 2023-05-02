@@ -1,6 +1,11 @@
 .result__paragraph {
     font-size: 2rem;
     text-align: center;
+    transition: color 0.25s 0.25s;
+}
+
+.result__paragraph--darkModeOn {
+    color: white;
 }
 
 .result__paragraph--special {

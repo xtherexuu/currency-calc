@@ -4,6 +4,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 .header__image {
@@ -17,6 +21,11 @@
 .nav__button {
     border: none;
     background-color: transparent;
+    transition: transform 0.5s;
+}
+
+.nav__button--active {
+    transform: rotate(180deg);
 }
 
 .button__element {
@@ -24,13 +33,39 @@
     background-color: black;
     width: 4.5rem;
     height: 0.5rem;
-    transition: transform 1s;
+    transition: transform 0.5s;
 }
 
-/* .button__element--firstActive {
-    transform: translate(0px, 7.5px) rotate(45deg)
+
+
+.button__element--firstActive {
+    transform: translate(0px, 7.5px) rotate(45deg);
+}
+
+@media(max-width: 720px) {
+    .button__element--firstActive {
+        transform: translate(0px, 6.25px) rotate(45deg);
+    }
+}
+
+@media (max-width: 450px) {
+    .button__element--firstActive {
+        transform: translate(0px, 4.75px) rotate(45deg);
+    }
 }
 
 .button__element--secoundActive {
-    transform: translate(0px,-7.5px) rotate(-45deg)
-} */
+    transform: translate(0px, -7.5px) rotate(-45deg);
+}
+
+@media(max-width: 720px) {
+    .button__element--secoundActive {
+        transform: translate(0px, -6.25px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 450px) {
+    .button__element--secoundActive {
+        transform: translate(0px, -4.75px) rotate(-45deg);
+    }
+}

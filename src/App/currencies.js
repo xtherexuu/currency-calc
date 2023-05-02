@@ -17,7 +17,7 @@ const currencies = [
     {
         name: "Funt Brytyjski",
         short: "GBP",
-        rate: 1,
+        rate: 5.5,
     },
 ];
 
