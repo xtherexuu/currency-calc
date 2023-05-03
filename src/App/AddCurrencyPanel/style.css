@@ -1,0 +1,132 @@
+.addCurrencyPanel {
+    width: 100%;
+    height: calc(100vh - (20px + 7rem));
+    position: fixed;
+    left: 0;
+    top: calc(20px + 7rem);
+    background-color: var(--light-main-color);
+    padding: 40px 20px 20px;
+    z-index: 3;
+    overflow-y: auto;
+    transform: translateY(100%);
+    display: none;
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.addCurrencyPanel--showed {
+    display: block;
+
+}
+
+.addCurrencyPanel--opened {
+    transform: translateY(0)
+}
+
+.addCurrencyPanel--darkModeOn {
+    background-color: var(--dark-main-color);
+}
+
+.addCurrencyPanel__header {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    text-align: center;
+}
+
+.headerPanel__heading {
+    font-size: 2.5rem;
+    transition: color 0.25s 0.25s;
+}
+
+.headerPanel__heading--darkModeOn {
+    color: white;
+}
+
+.header__button--panel {
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    background-color: transparent;
+    font-size: 2.5rem;
+}
+/* 
+.addCurrencyPanel__panel {
+    overflow-y: auto;
+} */
+
+.panel__form {
+    display: grid;
+    grid-template-areas: 
+    "n n n"
+    "s . r"
+    "b b b"
+    ;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+    .panel__form {
+        grid-template-areas: 
+        "n"
+        "s"
+        "r"
+        "b"
+        ;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 450px) {
+    .panel__form {
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .panel__form {
+        max-width: 60%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .panel__form {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 2000px) {
+    .panel__form {
+        max-width: 40%;
+    }
+}
+
+.form__label {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: center;
+    font-size: 1.75rem;
+    transition: color 0.25s 0.25s;
+}
+
+.form__label--darkModeOn {
+    color: white;
+}
+
+.form__label input {
+    margin-top: 10px;
+}
+
+.form__label--name {
+    grid-area: n;
+}
+
+.form__label--short {
+    grid-area: s;
+}
+
+.form__label--rate {
+    grid-area: r;
+}
