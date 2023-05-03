@@ -54,6 +54,12 @@
     }
 }
 
+@media (max-height: 475px) {
+    .button__element--firstActive {
+        transform: translate(0px, 4.75px) rotate(45deg);
+    }
+}
+
 .button__element--secoundActive {
     transform: translate(0px, -7.5px) rotate(-45deg);
 }
@@ -65,6 +71,12 @@
 }
 
 @media (max-width: 450px) {
+    .button__element--secoundActive {
+        transform: translate(0px, -4.75px) rotate(-45deg);
+    }
+}
+
+@media (max-height: 475px) {
     .button__element--secoundActive {
         transform: translate(0px, -4.75px) rotate(-45deg);
     }
