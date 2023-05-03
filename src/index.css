@@ -13,10 +13,6 @@ body {
   transition: background-color 0.5s;
 }
 
-/* html {
-  overflow-y: hidden;
-} */
-
 :root {
   font-size: 60%;
   --light-main-color: hsl(0, 0%, 95%);
@@ -32,6 +28,12 @@ body {
 }
 
 @media (max-width: 450px) {
+  :root {
+    font-size: 40%;
+  }
+}
+
+@media (max-height: 475px) {
   :root {
     font-size: 40%;
   }
