@@ -2,6 +2,11 @@
 
 ## This is my own medium-advanced currency calculator
 
+### DEMO: https://xtherexuu.github.io/currency-calc/
+
+### Preview:
+
+![Prezentacja strony interntowej](previewCurrencyCalculator.gif)
 ## Info
 
 This calculator was made in react using create-react-app.
