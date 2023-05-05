@@ -56,12 +56,14 @@ const AddCurrencyPanel = ({
                             );
                             setShortErrorVisibilityStatus((status) => (status = false));
                             setNameErrorVisibilityStatus((status) => (status = false));
+                            setName((name) => (name = ""));
+                            setShort((short) => (short = ""));
+                            setRate((rate) => (rate = ""));
                         } else if (
                             currencies.find((currency) => currency.name === name) !== undefined
                         ) {
                             setNameErrorVisibilityStatus((status) => (status = true));
                             setShortErrorVisibilityStatus((status) => (status = false));
-                            return;
                         } else if (
                             currencies.find((currency) => currency.short === short) !== undefined
                         ) {
@@ -90,7 +92,7 @@ const AddCurrencyPanel = ({
                             required={true}
                             minLength={4}
                             maxLength={30}
-                            pattern="[A-Za-z]+"
+                            pattern="[A-Za-z\u0080-\u024F]{1,}( ?[A-Za-z\u0080-\u024F]{1,}){0,2}(-?[A-Za-z\u0080-\u024F]{1,}){0,3}"
                         />
                     </label>
                     <label
