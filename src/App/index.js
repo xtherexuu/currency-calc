@@ -3,13 +3,30 @@ import Header from "./Header";
 import Calculator from "./Calculator";
 import KebabMenu from "./KebabMenu";
 import AddCurrencyPanel from "./AddCurrencyPanel";
+import initialCurrencies from "./currencies";
 
 function App() {
     const [isMenuButtonClicked, setMenuButtonStatus] = useState(false);
     const [isMenuOpened, setMenuOpenedStatus] = useState(false);
     const [isPanelButtonClicked, setPanelButtonStatus] = useState(false);
     const [isPanelOpened, setPanelOpenedStatus] = useState(false);
-    const [isDarkModeOn, setDarkMode] = useState(false);
+    const [isDarkModeOn, setDarkMode] = useState(
+        JSON.parse(localStorage.getItem("isDarkModeOn")) || false
+    );
+    const [currencies, setCurrencies] = useState(
+        !localStorage.getItem("currencies") ||
+            JSON.parse(localStorage.getItem("currencies")).length === 0
+            ? initialCurrencies
+            : JSON.parse(localStorage.getItem("currencies"))
+    );
+
+    useEffect(() => {
+        localStorage.setItem("currencies", JSON.stringify(currencies));
+    }, [currencies]);
+
+    useEffect(() => {
+        localStorage.setItem("isDarkModeOn", JSON.stringify(!!isDarkModeOn));
+    }, [isDarkModeOn]);
 
     useEffect(() => {
         const body = document.body;
@@ -56,19 +73,23 @@ function App() {
                 isMenuButtonClicked={isMenuButtonClicked}
                 setMenuButtonStatus={setMenuButtonStatus}
             />
-            <Calculator isDarkModeOn={isDarkModeOn} />
+            <Calculator isDarkModeOn={isDarkModeOn} currencies={currencies} />
             <KebabMenu
                 isDarkModeOn={isDarkModeOn}
                 setDarkMode={setDarkMode}
                 isMenuButtonClicked={isMenuButtonClicked}
                 isMenuOpened={isMenuOpened}
                 setPanelButtonStatus={setPanelButtonStatus}
+                currencies={currencies}
+                setCurrencies={setCurrencies}
             />
             <AddCurrencyPanel
                 isDarkModeOn={isDarkModeOn}
                 setPanelButtonStatus={setPanelButtonStatus}
                 isPanelButtonClicked={isPanelButtonClicked}
                 isPanelOpened={isPanelOpened}
+                currencies={currencies}
+                setCurrencies={setCurrencies}
             />
         </div>
     );

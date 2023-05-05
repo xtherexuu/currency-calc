@@ -13,8 +13,16 @@ const Header = ({ isMenuButtonClicked, setMenuButtonStatus }) => {
                         setMenuButtonStatus((status) => (status = !status));
                     }}
                 >
-                    <div className={`button__element${isMenuButtonClicked ? " button__element--firstActive" : ""}`}></div>
-                    <div className={`button__element ${isMenuButtonClicked ? " button__element--secoundActive" : ""}`}></div>
+                    <div
+                        className={`button__element${
+                            isMenuButtonClicked ? " button__element--firstActive" : ""
+                        }`}
+                    ></div>
+                    <div
+                        className={`button__element ${
+                            isMenuButtonClicked ? " button__element--secoundActive" : ""
+                        }`}
+                    ></div>
                 </button>
             </nav>
         </header>

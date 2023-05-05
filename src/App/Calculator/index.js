@@ -1,11 +1,10 @@
 import "./style.css";
 import React, { useState } from "react";
-import currencies from "../currencies";
 import swapArrowsImage from "../../Images/swapArrowsImg.png";
 import swapArrowsImageDark from "../../Images/swapArrowsImg-dark.png";
 import Result from "./Result";
 
-const Calculator = ({isDarkModeOn}) => {
+const Calculator = ({ isDarkModeOn, currencies }) => {
     const [fromCurrencyValue, setFromCurrencyValue] = useState("PLN");
     const [toCurrencyValue, setToCurrencyValue] = useState("EUR");
     const [amountValue, setAmountValue] = useState("");
@@ -34,12 +33,18 @@ const Calculator = ({isDarkModeOn}) => {
 
         setCombinedData((data) => (data = combinedData));
         calculateResult(combinedData);
-        setAmountValue(value => value = "");
+        setAmountValue((value) => (value = ""));
     };
 
     return (
         <section className="calculator">
-            <h2 className={`calculator__heading${isDarkModeOn ? " calculator__heading--darkModeOn" : ""}`}>Przelicz waluty</h2>
+            <h2
+                className={`calculator__heading${
+                    isDarkModeOn ? " calculator__heading--darkModeOn" : ""
+                }`}
+            >
+                Przelicz waluty
+            </h2>
             <form className="calculator__form" onSubmit={onFormSubmit}>
                 <input
                     value={amountValue}
@@ -58,7 +63,9 @@ const Calculator = ({isDarkModeOn}) => {
                     onChange={({ target }) => {
                         setFromCurrencyValue((value) => (value = target.value));
                     }}
-                    className={`form__select form__select--fromCurrency${isDarkModeOn ? " form__select--darkModeOn" : ""}`}
+                    className={`form__select form__select--fromCurrency${
+                        isDarkModeOn ? " form__select--darkModeOn" : ""
+                    }`}
                 >
                     {currencies.map((element) => (
                         <option key={element.short}>{element.short}</option>
@@ -74,15 +81,23 @@ const Calculator = ({isDarkModeOn}) => {
                     onChange={({ target }) => {
                         setToCurrencyValue((value) => (value = target.value));
                     }}
-                    className={`form__select form__select--toCurrency${isDarkModeOn ? " form__select--darkModeOn" : ""}`}
+                    className={`form__select form__select--toCurrency${
+                        isDarkModeOn ? " form__select--darkModeOn" : ""
+                    }`}
                 >
                     {currencies.map((element) => (
                         <option key={element.short}>{element.short}</option>
                     ))}
                 </select>
-                <button className={`form__button${isDarkModeOn ? " form__button--darkModeOn" : ""}`}>Przelicz</button>
+                <button
+                    className={`form__button${isDarkModeOn ? " form__button--darkModeOn" : ""}`}
+                >
+                    Przelicz
+                </button>
             </form>
-            {result ? <Result result={result} combinedData={combinedData} isDarkModeOn={isDarkModeOn} /> : null}
+            {result ? (
+                <Result result={result} combinedData={combinedData} isDarkModeOn={isDarkModeOn} />
+            ) : null}
         </section>
     );
 };

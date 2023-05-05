@@ -27,10 +27,10 @@
     width: 90%;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-template-areas: 
-    "i i i"
-    "f p t"
-    "b b b";
+    grid-template-areas:
+        "i i i"
+        "f p t"
+        "b b b";
     grid-gap: 20px;
 }
 
@@ -97,5 +97,3 @@
     align-self: center;
     justify-self: center;
 }
-
-

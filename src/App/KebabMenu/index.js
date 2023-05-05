@@ -1,7 +1,7 @@
 import "./style.css";
+import React, { useEffect, useState } from "react";
 import sunIcon from "../../Images/sunicon.png";
 import moonIcon from "../../Images/moonicon.png";
-import currencies from "../currencies";
 
 const KebabMenu = ({
     isDarkModeOn,
@@ -9,7 +9,17 @@ const KebabMenu = ({
     isMenuButtonClicked,
     isMenuOpened,
     setPanelButtonStatus,
+    currencies,
+    setCurrencies,
 }) => {
+    const [date, setDate] = useState(new Date());
+
+    useEffect(() => {
+        setInterval(() => {
+            setDate((date) => (date = new Date()));
+        }, 1000);
+    }, []);
+
     return (
         <div
             className={`kebabMenu${isDarkModeOn ? " kebabMenu--darkModeOn" : ""}${
@@ -95,7 +105,19 @@ const KebabMenu = ({
                                 <span className="rate__heading">{"Stawka (na PLN)"}</span>
                                 <span className="rate__rate">&times;{element.rate}</span>
                             </h3>
-                            <button className="currency__button">🗑️ Usuń walutę</button>
+                            <button
+                                className="currency__button"
+                                onClick={() => {
+                                    setCurrencies(
+                                        (currencies) =>
+                                            (currencies = currencies.filter(
+                                                (currency) => currency.short !== element.short
+                                            ))
+                                    );
+                                }}
+                            >
+                                🗑️ Usuń walutę
+                            </button>
                         </div>
                     ))}
                 </div>
@@ -106,14 +128,20 @@ const KebabMenu = ({
                         isDarkModeOn ? " footer__paragraph--darkModeOn" : ""
                     }`}
                 >
-                    Ostatnia aktualizacja kursu: 00.00.000r 00:00
+                    Ostatnia aktualizacja kursu: 04.05.2023r
                 </p>
                 <p
                     className={`footer__paragraph${
                         isDarkModeOn ? " footer__paragraph--darkModeOn" : ""
                     }`}
                 >
-                    Aktualna data: 00.00.000r 00:00:00
+                    Aktualna data:{" "}
+                    {date.toLocaleString("pl-PL", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                    })}
+                    &nbsp;{date.toLocaleTimeString("pl-PL")}
                 </p>
                 <p
                     className={`footer__paragraph${

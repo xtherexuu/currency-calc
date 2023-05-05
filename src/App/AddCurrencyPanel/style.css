@@ -49,6 +49,7 @@
     background-color: transparent;
     font-size: 2.5rem;
 }
+
 /* 
 .addCurrencyPanel__panel {
     overflow-y: auto;
@@ -56,10 +57,10 @@
 
 .panel__form {
     display: grid;
-    grid-template-areas: 
-    "n n n"
-    "s . r"
-    "b b b"
+    grid-template-areas:
+        "n n n"
+        "s . r"
+        "b b b"
     ;
     grid-template-columns: auto 1fr auto;
     grid-gap: 20px;
@@ -68,11 +69,11 @@
 
 @media (max-width: 720px) {
     .panel__form {
-        grid-template-areas: 
-        "n"
-        "s"
-        "r"
-        "b"
+        grid-template-areas:
+            "n"
+            "s"
+            "r"
+            "b"
         ;
         grid-template-columns: 1fr;
     }
@@ -129,4 +130,46 @@
 
 .form__label--rate {
     grid-area: r;
+}
+
+.errorPanel {
+    margin: 0 auto;
+}
+
+@media (min-width: 450px) {
+    .errorPanel {
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .errorPanel {
+        max-width: 60%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .errorPanel {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 2000px) {
+    .errorPanel {
+        max-width: 40%;
+    }
+}
+
+.error__paragraph {
+    display: none;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.error__paragraph--darkModeOn {
+    color: white;
+}
+
+.error__paragraph--visible {
+    display: block;
 }
