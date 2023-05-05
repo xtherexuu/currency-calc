@@ -93,6 +93,7 @@ const AddCurrencyPanel = ({
                             minLength={4}
                             maxLength={30}
                             pattern="[A-Za-z\u0080-\u024F]{1,}( ?[A-Za-z\u0080-\u024F]{1,}){0,2}(-?[A-Za-z\u0080-\u024F]{1,}){0,3}"
+                            title="Możesz wpisać wyłącznie litery, dwie spacje i trzy '-' "
                         />
                     </label>
                     <label
